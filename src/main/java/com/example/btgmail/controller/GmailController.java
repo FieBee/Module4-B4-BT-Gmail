@@ -11,12 +11,17 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class GmailController {
 
+    @ModelAttribute("gmail")
+    public Gmail alolo(){
+        return new Gmail();
+    }
     @GetMapping("")
     public ModelAndView home(){
         ModelAndView modelAndView = new ModelAndView("index");
-        modelAndView.addObject("gmail",new Gmail());
+//        modelAndView.addObject("gmail",new Gmail());
         return modelAndView;
     }
+
 
     @PostMapping("/view")
     public ModelAndView view(@ModelAttribute("gmail") Gmail gmail){
