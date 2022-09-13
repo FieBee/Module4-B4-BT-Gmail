@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:form="http://www.w3.org/1999/xhtml">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1></h1>
+<form action="/view" method="post">
+    <table>
+        <tr>
+            <td>Languages</td>
+            <td>
+                <select th:field="*{gmail.languages}">
+                    <option value="English"/>English
+                    <option value="Vietnamese"/>Vietnamese
+                    <option value="Japanese"/>Japanese
+                    <option value="Chinese"/>Chinese
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Page size</td>
+            <td>
+                <select th:field="*{gmail.size}">
+                    <option value="5"/>5
+                    <option value="10"/>10
+                    <option value="15"/>15
+                    <option value="25"/>25
+                    <option value="50"/>50
+                    <option value="100"/>100
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Spam filter</td>
+            <td>
+                <input type="checkbox" th:field="*{gmail.filter}">
+            </td>
+            <td><p style="float: left">Enable spams filter</p></td>
+        </tr>
+        <tr>
+            <td>Signature</td>
+            <td><textarea th:field="*{gmail.signature}"> </textarea></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Update"></td>
+            <td><input type="reset" value="Cancel"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
